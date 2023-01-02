@@ -1,5 +1,5 @@
 process.once("loaded", () => {
-    const { contextBridge, ipcRenderer, shell } = require('electron')
+    const { contextBridge, shell } = require('electron')
     const os = require('os')
 
     contextBridge.exposeInMainWorld(
