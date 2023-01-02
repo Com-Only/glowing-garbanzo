@@ -16,7 +16,7 @@ function getInstallerConfig () {
   return Promise.resolve({
     appDirectory: path.join(outPath, 'cdt-app-win32-ia32/'),
     authors: 'Le Carreau du Temple',
-    noMsi: true,
+    noMsi: false,
     outputDirectory: path.join(outPath, 'windows-installer'),
     exe: 'cdt-app.exe',
     setupExe: 'cdt-app-installer.exe',
