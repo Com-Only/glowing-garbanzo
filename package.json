@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron-winstaller": "^5.1.0"
+    "electron-winstaller": "^5.1.0",
+    "electron-prebuilt-compile": "8.2.0"
   }
 }
