@@ -2,7 +2,7 @@
   "name": "cdt-installer",
   "version": "1.3.0",
   "description": "",
-  "main": "main.js",
+  "main": "app/main.js",
   "scripts": {
     "prestart": "electron-forge make",
     "start": "node installer.js"
