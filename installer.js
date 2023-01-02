@@ -14,7 +14,7 @@ function getInstallerConfig () {
   const outPath = path.join(rootPath, 'out')
 
   return Promise.resolve({
-    appDirectory: path.join(outPath, 'cdt-app-win32-ia32/'),
+    appDirectory: path.join(outPath, 'cdt-app-win32-x64/'),
     authors: 'Le Carreau du Temple',
     noMsi: false,
     outputDirectory: path.join(outPath, 'windows-installer'),
