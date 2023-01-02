@@ -1,5 +1,13 @@
-const { app, BrowserWindow, session, screen } = require('electron')
+const { app, BrowserWindow, session, screen, autoUpdater } = require('electron')
 const path = require('path')
+
+autoUpdater.setFeedURL({
+    provider: 'github',
+    owner: 'Com-Only',
+    repo: 'glowing-garbanzo',
+    token: '',
+    releaseType: ''
+})
 
 
 const createWindow = () => {
