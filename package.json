@@ -1,6 +1,6 @@
 {
   "name": "cdt-installer",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -10,8 +10,29 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
   "devDependencies": {
     "electron-winstaller": "^5.1.0",
     "electron-prebuilt-compile": "8.2.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "name": "my-app",
+        "icon": "assets/icons/icon.ico",
+        "platform": "win32"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "cdt-app"
+          }
+        }
+      ],
+      "plugins": []
+    }    
   }
 }

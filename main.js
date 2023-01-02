@@ -20,6 +20,8 @@ const createWindow = () => {
     win.loadURL('https://carreaudutemple.virtualonly.immo');
 }
 
+if (require('electron-squirrel-startup')) app.quit();
+
 app.whenReady().then(() => {
     session.defaultSession.allowNTLMCredentialsForDomains('*');
     createWindow();
