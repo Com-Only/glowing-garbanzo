@@ -4,7 +4,7 @@
   "description": "Intranet du Carreau du Temple",
   "main": "app/main.js",
   "scripts": {
-    "prestart": "electron-forge make",
+    "prestart": "rimraf out && electron-forge make",
     "start": "node installer.js"
   },
   "keywords": [],
@@ -15,7 +15,8 @@
   },
   "devDependencies": {
     "electron-winstaller": "^5.1.0",
-    "electron-prebuilt-compile": "8.2.0"
+    "electron-prebuilt-compile": "8.2.0",
+    "rimraf": "^3.0.2"
   },
   "config": {
     "forge": {
