@@ -1,14 +1,14 @@
 {
   "name": "cdt-installer",
   "version": "1.3.0",
-  "description": "",
+  "description": "Intranet du Carreau du Temple",
   "main": "app/main.js",
   "scripts": {
     "prestart": "electron-forge make",
     "start": "node installer.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Le Carreau du Temple",
   "license": "ISC",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
@@ -31,7 +31,8 @@
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "cdt-app",
-            "nuspec": "cdt-app.nuspec"
+            "authors": "Le Carreau du Temple",
+            "description": "Intranet du Carreau du Temple"
           }
         }
       ],
