@@ -20,15 +20,18 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "name": "my-app",
+        "name": "cdt-app",
         "icon": "assets/icons/icon.ico",
-        "platform": "win32"
+        "platform": "win32",
+        "arch": "x64",
+        "outDir": "release-builds"
       },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "cdt-app"
+            "name": "cdt-app",
+            "nuspec": "cdt-app.nuspec"
           }
         }
       ],

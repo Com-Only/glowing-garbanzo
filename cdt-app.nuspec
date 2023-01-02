@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>cdt-app</id>
+    <version>1.0.0</version>
+    <title>Intranet Carreau du Temple</title>
+    <authors>Le Carreau du Temple</authors>
+    <description>Appli Intranet du Carreau du Temple</description>
+  </metadata>
+</package>
