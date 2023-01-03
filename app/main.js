@@ -1,14 +1,11 @@
-const { app, BrowserWindow, session, screen, autoUpdater } = require('electron')
+const { app, BrowserWindow, session, screen } = require('electron')
 const path = require('path')
 
-autoUpdater.setFeedURL({
-    provider: 'github',
-    owner: 'Com-Only',
-    repo: 'glowing-garbanzo',
-    token: '',
-    releaseType: ''
+require('update-electron-app')({
+    repo: 'Com-Only/glowing-garbanzo',
+    updateInterval: '1 hour',
+    logger: require('electron-log')
 })
-
 
 const createWindow = () => {
     const { width, height } = screen.getPrimaryDisplay().workAreaSize;
@@ -31,6 +28,7 @@ const createWindow = () => {
 if (require('electron-squirrel-startup')) app.quit();
 
 app.whenReady().then(() => {
+    
     session.defaultSession.allowNTLMCredentialsForDomains('*');
     createWindow();
 
