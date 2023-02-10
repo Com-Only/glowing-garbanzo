@@ -22,7 +22,7 @@ const createWindow = () => {
 
     win.maximize();
     
-    win.loadURL('https://carreaudutemple.virtualonly.immo');
+    win.loadURL('https://intranet.carreaudutemple.org:65401');
 }
 
 if (require('electron-squirrel-startup')) app.quit();
