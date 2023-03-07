@@ -1,4 +1,4 @@
-const { app, BrowserWindow, session, screen } = require('electron')
+const { app, BrowserWindow, ipcMain, screen } = require('electron')
 const path = require('path')
 
 require('update-electron-app')({
@@ -27,11 +27,13 @@ const createWindow = () => {
 
 if (require('electron-squirrel-startup')) app.quit();
 
-app.whenReady().then(() => {
-    
-    session.defaultSession.allowNTLMCredentialsForDomains('*');
-    createWindow();
+app.setLoginItemSettings({
+    openAtLogin: true,
+    path: app.getPath('exe'),
+})
 
+app.whenReady().then(() => {
+    createWindow();
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
     })
@@ -40,3 +42,8 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit();
 })
+
+ipcMain.on('blur-window', () => {
+    BrowserWindow.getFocusedWindow().blur();
+});
+

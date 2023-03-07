@@ -1,5 +1,5 @@
 process.once("loaded", () => {
-    const { contextBridge, shell } = require('electron')
+    const { contextBridge, shell, ipcRenderer } = require('electron')
     const os = require('os')
 
     contextBridge.exposeInMainWorld(
@@ -10,7 +10,10 @@ process.once("loaded", () => {
                 shell.openPath(url)
             },
             shellOpenExternal: (url) => {
-                console.log(url)
+                // remove focus on Electron window
+                ipcRenderer.send('blur-window')
+
+                // open url or file path
                 shell.openExternal(url, {activate: true})
             },
             getCurrentUser: () => {
