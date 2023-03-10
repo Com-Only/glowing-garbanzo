@@ -1,11 +1,11 @@
 {
   "name": "intranet-cdt",
-  "version": "1.3.6",
+  "version": "1.3.7a",
   "description": "Intranet du Carreau du Temple",
   "main": "app/main.js",
   "scripts": {
-    "prestart": "rimraf out && electron-forge package && electron-forge make",
-    "start": "echo 'done!'"
+    "make:win": "rimraf out && electron-forge package && electron-forge make --arch=x64 --platform=win32",
+    "make:mac": "rimraf out && electron-forge package && electron-forge make --arch=universal --platform=darwin"
   },
   "keywords": [],
   "author": "Le Carreau du Temple",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-dmg": "^6.0.5",
     "@electron-forge/maker-squirrel": "^6.0.4",
     "electron": "^22.0.0",
     "electron-winstaller": "^5.1.0",
@@ -39,6 +40,13 @@
             "authors": "Le Carreau du Temple",
             "description": "Intranet du Carreau du Temple",
             "icon": "./assets/icons/icon.ico"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "name": "intranet-cdt",
+            "icon": "./assets/icons/icon.icns"
           }
         }
       ],
